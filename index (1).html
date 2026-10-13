@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aplikasi Pembuat Surat Lamaran Kerja Dalam 10 Menit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <h1>LamarYuk</h1>
+      <p>Isi formulir di sebelah kiri, surat langsung tersusun rapi di sebelah kanan. Siap dicetak atau disimpan sebagai PDF.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <!-- ========== FORMULIR ========== -->
+    <section class="panel" aria-labelledby="judul-form">
+      <h2 id="judul-form" class="panel__title">Data surat</h2>
+      <p class="panel__lead">Kolom wajib yang masih kosong tampil sebagai tanda biru di surat. Kolom opsional hanya muncul di surat jika diisi.</p>
+
+      <form id="form" autocomplete="off">
+
+        <fieldset>
+          <legend>Data diri</legend>
+
+          <div class="field">
+            <label for="nama">Nama lengkap</label>
+            <input type="text" id="nama" placeholder="Rizky Ananda Putra">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="tempatLahir">Tempat lahir</label>
+              <input type="text" id="tempatLahir" placeholder="Bandung">
+            </div>
+            <div class="field">
+              <label for="tglLahir">Tanggal lahir</label>
+              <input type="date" id="tglLahir">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="jk">Jenis kelamin <span class="opt">(opsional)</span></label>
+              <select id="jk">
+                <option value="">Pilih</option>
+                <option>Laki-laki</option>
+                <option>Perempuan</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="agama">Agama <span class="opt">(opsional)</span></label>
+              <select id="agama">
+                <option value="">Pilih</option>
+                <option>Islam</option>
+                <option>Kristen</option>
+                <option>Katolik</option>
+                <option>Hindu</option>
+                <option>Buddha</option>
+                <option>Konghucu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="kewarganegaraan">Kewarganegaraan <span class="opt">(opsional)</span></label>
+            <input type="text" id="kewarganegaraan" placeholder="Indonesia">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pendidikan dan kontak</legend>
+
+          <div class="field">
+            <label for="pendidikan">Pendidikan terakhir</label>
+            <input type="text" id="pendidikan" placeholder="S1 Manajemen, Universitas Padjadjaran">
+          </div>
+
+          <div class="field">
+            <label for="ipk">IPK atau nilai akhir <span class="opt">(opsional)</span></label>
+            <input type="text" id="ipk" placeholder="3,62 dari 4,00">
+          </div>
+
+          <div class="field">
+            <label for="alamat">Alamat</label>
+            <input type="text" id="alamat" placeholder="Jl. Melati No. 12, Bandung 40121">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="hp">No. HP</label>
+              <input type="tel" id="hp" inputmode="tel" placeholder="0812-3456-7890">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="nama@email.com">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="portofolio">LinkedIn atau portofolio <span class="opt">(opsional)</span></label>
+            <input type="text" id="portofolio" placeholder="linkedin.com/in/nama-anda">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tujuan lamaran</legend>
+
+          <div class="row">
+            <div class="field">
+              <label for="perusahaan">Nama perusahaan</label>
+              <input type="text" id="perusahaan" placeholder="PT Nusantara Digital">
+            </div>
+            <div class="field">
+              <label for="posisi">Posisi yang dilamar</label>
+              <input type="text" id="posisi" placeholder="Digital Marketing Executive">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="alamatPerusahaan">Alamat atau kota perusahaan <span class="opt">(opsional)</span></label>
+            <input type="text" id="alamatPerusahaan" placeholder="Jakarta">
+          </div>
+
+          <div class="field">
+            <label for="sumber">Sumber informasi lowongan <span class="opt">(opsional)</span></label>
+            <input type="text" id="sumber" placeholder="LinkedIn, JobStreet, situs perusahaan">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="kota">Kota penulisan surat</label>
+              <input type="text" id="kota" placeholder="Bandung">
+            </div>
+            <div class="field">
+              <label for="tglSurat">Tanggal surat</label>
+              <input type="date" id="tglSurat">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Isi surat</legend>
+
+          <div class="field">
+            <label for="pengalaman">Pengalaman dan keahlian</label>
+            <textarea id="pengalaman" rows="5" placeholder="Ceritakan pengalaman kerja, magang, organisasi, atau keahlian yang relevan dengan posisi ini."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="motivasi">Alasan melamar</label>
+            <textarea id="motivasi" rows="4" placeholder="Mengapa Anda tertarik dengan perusahaan dan posisi ini?"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="lampiran">Lampiran <span class="opt">(satu baris satu berkas)</span></label>
+            <textarea id="lampiran" rows="5">Curriculum Vitae
+Fotokopi ijazah dan transkrip nilai
+Pas foto terbaru
+Fotokopi KTP
+Sertifikat pendukung</textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tanda tangan</legend>
+
+          <div class="field">
+            <label for="tandaTangan">Unggah gambar tanda tangan</label>
+            <input type="file" id="tandaTangan" accept="image/png,image/jpeg,image/webp">
+            <p class="hint">Tanda tangani kertas putih, lalu foto atau scan. Format PNG, JPG, atau WebP, maksimal 5 MB. Gambar tidak dikirim ke mana pun dan hanya tersimpan di browser ini.</p>
+          </div>
+
+          <div class="sig-preview" id="sigPreview">
+            <img id="sigPreviewImg" alt="Pratinjau tanda tangan" hidden>
+            <span class="sig-empty" id="sigEmpty">Belum ada tanda tangan</span>
+          </div>
+
+          <div class="sig-controls is-disabled" id="sigControls">
+            <label class="check">
+              <input type="checkbox" id="sigClean" checked disabled>
+              Hapus latar putih otomatis
+            </label>
+
+            <div class="range">
+              <label for="sigWidth">Ukuran</label>
+              <input type="range" id="sigWidth" min="80" max="240" step="5" value="150" disabled>
+              <output id="sigWidthOut" for="sigWidth">150 px</output>
+            </div>
+
+            <button type="button" class="btn btn--ghost btn--sm" id="sigRemove" disabled>Hapus tanda tangan</button>
+          </div>
+        </fieldset>
+
+      </form>
+    </section>
+
+    <!-- ========== PRATINJAU ========== -->
+    <section class="preview" aria-label="Pratinjau surat">
+      <div class="toolbar">
+        <button type="button" class="btn btn--primary" id="btn-cetak">Cetak atau simpan PDF</button>
+        <button type="button" class="btn btn--ghost" id="btn-salin">Salin teks</button>
+        <button type="button" class="btn btn--ghost" id="btn-contoh">Isi contoh</button>
+        <button type="button" class="btn btn--ghost" id="btn-reset">Kosongkan</button>
+      </div>
+
+      <article class="paper" id="paper" aria-live="polite"></article>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+(() => {
+  'use strict';
+
+  const STORAGE_KEY = 'surat-lamaran-v2';
+
+  const form    = document.getElementById('form');
+  const paper   = document.getElementById('paper');
+  const toastEl = document.getElementById('toast');
+
+  const IDS = [
+    'nama', 'tempatLahir', 'tglLahir', 'jk', 'agama', 'kewarganegaraan',
+    'pendidikan', 'ipk', 'alamat', 'hp', 'email', 'portofolio',
+    'kota', 'tglSurat', 'perusahaan', 'alamatPerusahaan', 'posisi', 'sumber',
+    'pengalaman', 'motivasi', 'lampiran'
+  ];
+
+  const SAMPLE = {
+    nama: 'Rizky Ananda Putra',
+    tempatLahir: 'Bandung',
+    tglLahir: '1999-03-14',
+    jk: 'Laki-laki',
+    agama: 'Islam',
+    kewarganegaraan: 'Indonesia',
+    pendidikan: 'S1 Manajemen, Universitas Padjadjaran',
+    ipk: '3,62 dari 4,00',
+    alamat: 'Jl. Melati No. 12, Cibeunying Kidul, Bandung 40121',
+    hp: '0812-3456-7890',
+    email: 'rizky.ananda@email.com',
+    portofolio: 'linkedin.com/in/rizky-ananda',
+    kota: 'Bandung',
+    perusahaan: 'PT Nusantara Digital Solusi',
+    alamatPerusahaan: 'Jakarta',
+    posisi: 'Digital Marketing Executive',
+    sumber: 'LinkedIn',
+    pengalaman:
+      'Saya baru saja menyelesaikan pendidikan S1 Manajemen. ' +
+      'Selama kuliah, saya aktif sebagai koordinator media sosial di himpunan mahasiswa dan ' +
+      'menjalani magang selama enam bulan sebagai content marketing intern di sebuah startup e-commerce, ' +
+      'tempat saya membantu meningkatkan interaksi akun Instagram sebesar 40 persen.\n' +
+      'Saya terbiasa menggunakan Google Analytics, Meta Ads Manager, dan Canva, serta mampu bekerja ' +
+      'dalam tim dengan target yang jelas.',
+    motivasi:
+      'Saya tertarik bergabung dengan perusahaan Bapak/Ibu karena reputasinya dalam membangun ' +
+      'kampanye digital yang kreatif dan berbasis data. Saya yakin kemampuan dan semangat belajar saya ' +
+      'dapat memberikan kontribusi nyata bagi tim pemasaran.'
+  };
+
+  /* ---------- Tanda tangan: status & konstanta ---------- */
+
+  const SIG_MAX_W = 700;
+  const SIG_MAX_H = 350;
+  const SIG_MIN_WIDTH = 80;
+  const SIG_MAX_WIDTH = 240;
+  const SIG_DEFAULT_WIDTH = 150;
+  const SIG_MAX_BYTES = 5 * 1024 * 1024;
+  const IMG_RE = /^data:image\/(png|jpeg);base64,[A-Za-z0-9+\/=]+$/;
+
+  const sig = {
+    original: '',   // gambar yang sudah diperkecil (JPEG, latar putih)
+    processed: '',  // gambar yang tampil di surat (latar putih dihapus jika dicentang)
+    clean: true,
+    width: SIG_DEFAULT_WIDTH
+  };
+  let sigToken = 0;
+
+  /* ---------- Util ---------- */
+
+  const $ = (id) => document.getElementById(id);
+  const val = (id) => $(id).value.trim();
+
+  const esc = (s) =>
+    s.replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+
+  const ph = (label) => `<span class="ph">[${esc(label)}]</span>`;
+  const or = (id, label) => (val(id) ? esc(val(id)) : ph(label));
+
+  const todayISO = () => {
+    const d = new Date();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${d.getFullYear()}-${m}-${day}`;
+  };
+
+  const formatTanggal = (iso) => {
+    if (!iso) return '';
+    const [y, m, d] = iso.split('-').map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString('id-ID', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
+  };
+
+  const paragraphs = (id, label) => {
+    const lines = val(id).split(/\n+/).map((s) => s.trim()).filter(Boolean);
+    if (!lines.length) return `<p>${ph(label)}</p>`;
+    return lines.map((p) => `<p>${esc(p)}</p>`).join('');
+  };
+
+  /* ---------- Render surat ---------- */
+
+  function render() {
+    const lampiran = val('lampiran').split('\n').map((s) => s.trim()).filter(Boolean);
+
+    const kota = or('kota', 'Kota');
+    const tglSurat = val('tglSurat') ? esc(formatTanggal(val('tglSurat'))) : ph('Tanggal');
+
+    const tempatLahir = or('tempatLahir', 'Tempat lahir');
+    const tglLahir = val('tglLahir') ? esc(formatTanggal(val('tglLahir'))) : ph('Tanggal lahir');
+
+    const perusahaan = or('perusahaan', 'Nama perusahaan');
+    const posisi = or('posisi', 'Posisi');
+    const tujuan = val('alamatPerusahaan') ? esc(val('alamatPerusahaan')) : 'Tempat';
+
+    const pembuka = val('sumber')
+      ? `Berdasarkan informasi lowongan yang saya peroleh dari ${esc(val('sumber'))}, ` +
+        `saya bermaksud mengajukan lamaran untuk posisi <strong>${posisi}</strong> di ${perusahaan}.`
+      : `Sehubungan dengan adanya lowongan pekerjaan di ${perusahaan}, ` +
+        `saya bermaksud mengajukan lamaran untuk posisi <strong>${posisi}</strong>.`;
+
+    /* baris data diri: kolom opsional hanya tampil jika diisi */
+    const rows = [];
+    const optional = (label, id) => {
+      if (val(id)) rows.push([label, esc(val(id))]);
+    };
+
+    rows.push(['Nama', or('nama', 'Nama lengkap')]);
+    rows.push(['Tempat, tanggal lahir', `${tempatLahir}, ${tglLahir}`]);
+    optional('Jenis kelamin', 'jk');
+    optional('Agama', 'agama');
+    optional('Kewarganegaraan', 'kewarganegaraan');
+    rows.push(['Pendidikan terakhir', or('pendidikan', 'Pendidikan terakhir')]);
+    optional('IPK', 'ipk');
+    rows.push(['Alamat', or('alamat', 'Alamat')]);
+    rows.push(['No. HP', or('hp', 'No. HP')]);
+    rows.push(['Email', or('email', 'Email')]);
+    optional('LinkedIn / portofolio', 'portofolio');
+
+    const dataRows = rows
+      .map(([label, value]) => `<tr><td>${label}</td><td>: ${value}</td></tr>`)
+      .join('');
+
+    const sigImg = sig.processed
+      ? `<img class="sign__img" src="${sig.processed}" alt="Tanda tangan" style="width:${sig.width}px">`
+      : '';
+
+    paper.innerHTML = `
+      <p class="right">${kota}, ${tglSurat}</p>
+
+      <table class="kv">
+        <tr><td>Perihal</td><td>: Lamaran pekerjaan sebagai ${posisi}</td></tr>
+        <tr><td>Lampiran</td><td>: ${lampiran.length ? lampiran.length + ' berkas' : '-'}</td></tr>
+      </table>
+
+      <p>
+        Kepada Yth.<br>
+        Bapak/Ibu Pimpinan HRD<br>
+        <strong>${perusahaan}</strong><br>
+        di ${tujuan}
+      </p>
+
+      <p>Dengan hormat,</p>
+
+      <p>${pembuka}</p>
+
+      <p>Adapun data diri saya adalah sebagai berikut:</p>
+
+      <table class="kv kv--data">${dataRows}</table>
+
+      ${paragraphs('pengalaman', 'Pengalaman dan keahlian')}
+      ${paragraphs('motivasi', 'Alasan melamar')}
+
+      ${lampiran.length
+        ? `<p>Sebagai bahan pertimbangan, berikut saya lampirkan:</p>
+           <ol>${lampiran.map((l) => `<li>${esc(l)}</li>`).join('')}</ol>`
+        : ''}
+
+      <p>
+        Demikian surat lamaran ini saya sampaikan. Besar harapan saya untuk dapat diberikan
+        kesempatan wawancara agar dapat menjelaskan kualifikasi saya lebih lanjut.
+        Atas perhatian Bapak/Ibu, saya ucapkan terima kasih.
+      </p>
+
+      <div class="sign">
+        <p>Hormat saya,</p>
+        <div class="sign__space">${sigImg}</div>
+        <p><strong>${or('nama', 'Nama lengkap')}</strong></p>
+      </div>
+    `;
+  }
+
+  /* ---------- Tanda tangan: pengolahan gambar ---------- */
+
+  const loadImage = (src) =>
+    new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error('Gambar tidak bisa dibaca'));
+      img.src = src;
+    });
+
+  /* perkecil gambar dan ratakan di atas latar putih supaya ringan disimpan */
+  async function prepareSignature(file) {
+    const url = URL.createObjectURL(file);
+    try {
+      const img = await loadImage(url);
+      const scale = Math.min(1, SIG_MAX_W / img.naturalWidth, SIG_MAX_H / img.naturalHeight);
+      const w = Math.max(1, Math.round(img.naturalWidth * scale));
+      const h = Math.max(1, Math.round(img.naturalHeight * scale));
+
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(img, 0, 0, w, h);
+      return canvas.toDataURL('image/jpeg', 0.9);
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+  }
+
+  /* ubah piksel terang jadi transparan, tepi dibuat halus */
+  async function removeWhite(src) {
+    const img = await loadImage(src);
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const px = data.data;
+    const HI = 235;
+    const LO = 170;
+
+    for (let i = 0; i < px.length; i += 4) {
+      const lum = 0.299 * px[i] + 0.587 * px[i + 1] + 0.114 * px[i + 2];
+      if (lum >= HI) px[i + 3] = 0;
+      else if (lum > LO) px[i + 3] = Math.round(255 * (HI - lum) / (HI - LO));
+    }
+
+    ctx.putImageData(data, 0, 0);
+    return canvas.toDataURL('image/png');
+  }
+
+  async function updateSignature() {
+    const token = ++sigToken;
+    let out = '';
+
+    if (sig.original) {
+      try {
+        out = sig.clean ? await removeWhite(sig.original) : sig.original;
+      } catch (e) {
+        out = sig.original;
+      }
+    }
+
+    if (token !== sigToken) return;   // ada perubahan yang lebih baru
+    sig.processed = out;
+    render();
+    updateSigUI();
+  }
+
+  /* ---------- Tanda tangan: tampilan kontrol ---------- */
+
+  function syncSigControls() {
+    $('sigClean').checked = sig.clean;
+    $('sigWidth').value = sig.width;
+    $('sigWidthOut').textContent = `${sig.width} px`;
+  }
+
+  function updateSigUI() {
+    const has = Boolean(sig.processed);
+    const img = $('sigPreviewImg');
+
+    if (has) img.src = sig.processed;
+    else img.removeAttribute('src');
+    img.hidden = !has;
+    $('sigEmpty').hidden = has;
+
+    const enabled = Boolean(sig.original);
+    $('sigClean').disabled = !enabled;
+    $('sigWidth').disabled = !enabled;
+    $('sigRemove').disabled = !enabled;
+    $('sigControls').classList.toggle('is-disabled', !enabled);
+  }
+
+  /* ---------- Simpan draf di browser ---------- */
+
+  function save() {
+    const data = {};
+    IDS.forEach((id) => { data[id] = $(id).value; });
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        ...data,
+        sigOriginal: sig.original,
+        sigClean: sig.clean,
+        sigWidth: sig.width
+      }));
+      return true;
+    } catch (e) {
+      // penyimpanan penuh: simpan isian saja tanpa gambar
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e2) { /* abaikan */ }
+      return false;
+    }
+  }
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return false;
+      const data = JSON.parse(raw);
+
+      IDS.forEach((id) => {
+        if (typeof data[id] === 'string') $(id).value = data[id];
+      });
+
+      if (typeof data.sigOriginal === 'string' && IMG_RE.test(data.sigOriginal)) {
+        sig.original = data.sigOriginal;
+      }
+      if (typeof data.sigClean === 'boolean') sig.clean = data.sigClean;
+      if (Number.isFinite(data.sigWidth)) {
+        sig.width = Math.min(SIG_MAX_WIDTH, Math.max(SIG_MIN_WIDTH, data.sigWidth));
+      }
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /* ---------- Notifikasi ---------- */
+
+  let toastTimer;
+  function toast(message) {
+    toastEl.textContent = message;
+    toastEl.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('is-show'), 2600);
+  }
+
+  /* ---------- Aksi tombol ---------- */
+
+  async function salin() {
+    const text = paper.innerText.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+    }
+    toast('Teks surat sudah disalin');
+  }
+
+  function isiContoh() {
+    Object.entries(SAMPLE).forEach(([id, v]) => { $(id).value = v; });
+    $('tglSurat').value = todayISO();
+    render();
+    save();
+    toast('Contoh data terisi');
+  }
+
+  function kosongkan() {
+    form.reset();               // lampiran kembali ke daftar bawaan
+    $('tglSurat').value = todayISO();
+
+    sigToken++;
+    sig.original = '';
+    sig.processed = '';
+    sig.clean = true;
+    sig.width = SIG_DEFAULT_WIDTH;
+    syncSigControls();
+    updateSigUI();
+
+    render();
+    save();
+    toast('Formulir dikosongkan');
+  }
+
+  /* ---------- Tanda tangan: aksi ---------- */
+
+  async function onSignatureFile(event) {
+    const input = event.target;
+    const file = input.files && input.files[0];
+    if (!file) return;
+
+    if (!/^image\/(png|jpeg|webp)$/.test(file.type)) {
+      toast('Pilih gambar berformat PNG, JPG, atau WebP');
+      input.value = '';
+      return;
+    }
+    if (file.size > SIG_MAX_BYTES) {
+      toast('Ukuran gambar maksimal 5 MB');
+      input.value = '';
+      return;
+    }
+
+    try {
+      sig.original = await prepareSignature(file);
+      await updateSignature();
+      if (save()) toast('Tanda tangan ditambahkan');
+      else toast('Tanda tangan tampil di surat, tetapi tidak ikut tersimpan di draf');
+    } catch (e) {
+      toast('Gambar tidak bisa dibaca, coba berkas lain');
+    }
+    input.value = '';
+  }
+
+  function hapusTandaTangan() {
+    sigToken++;
+    sig.original = '';
+    sig.processed = '';
+    updateSigUI();
+    render();
+    save();
+    toast('Tanda tangan dihapus');
+  }
+
+  /* ---------- Inisialisasi ---------- */
+
+  form.addEventListener('input', () => { render(); save(); });
+  form.addEventListener('submit', (e) => e.preventDefault());
+
+  $('tandaTangan').addEventListener('change', onSignatureFile);
+
+  $('sigClean').addEventListener('change', (e) => {
+    sig.clean = e.target.checked;
+    updateSignature().then(save);
+  });
+
+  $('sigWidth').addEventListener('input', (e) => {
+    sig.width = Number(e.target.value);
+    $('sigWidthOut').textContent = `${sig.width} px`;
+  });
+
+  $('sigRemove').addEventListener('click', hapusTandaTangan);
+
+  $('btn-cetak').addEventListener('click', () => window.print());
+  $('btn-salin').addEventListener('click', salin);
+  $('btn-contoh').addEventListener('click', isiContoh);
+  $('btn-reset').addEventListener('click', kosongkan);
+
+  if (!load() || !val('tglSurat')) $('tglSurat').value = todayISO();
+  syncSigControls();
+  updateSigUI();
+  render();
+  if (sig.original) updateSignature();
+})();
+  </script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+/* =========================================================
+   Surat Lamaran Kerja— tema biru
+   ========================================================= */
+
+:root {
+  --navy-900: #0a1f44;
+  --navy-800: #0f2d66;
+  --blue-700: #1546b8;
+  --blue-600: #1d5be0;
+  --blue-500: #3b7bf5;
+  --blue-200: #c4d6fa;
+  --blue-100: #e3edff;
+  --blue-50:  #f2f6ff;
+
+  --ink:   #12203f;
+  --muted: #5a6b8e;
+  --white: #ffffff;
+
+  --radius: 14px;
+  --shadow-panel: 0 1px 2px rgba(10, 31, 68, .06), 0 14px 36px -14px rgba(10, 31, 68, .3);
+  --shadow-paper: 0 1px 2px rgba(10, 31, 68, .08), 0 22px 56px -14px rgba(10, 31, 68, .35);
+
+  --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-letter: 'Source Serif 4', 'Times New Roman', Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--blue-50);
+  line-height: 1.5;
+}
+
+/* ---------- Header ---------- */
+
+.topbar {
+  padding: 52px 24px 132px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .09) 1px, transparent 0) 0 0 / 22px 22px,
+    linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 45%, var(--blue-700) 100%);
+}
+
+.topbar__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.topbar h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 4.4vw, 46px);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.1;
+}
+
+.topbar p {
+  margin: 0;
+  max-width: 54ch;
+  font-size: 16px;
+  color: #d3e2ff;
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 440px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  max-width: 1280px;
+  margin: -92px auto 72px;
+  padding: 0 24px;
+}
+
+/* ---------- Panel formulir ---------- */
+
+.panel {
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--blue-100);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-panel);
+}
+
+.panel__title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--navy-900);
+}
+
+.panel__lead {
+  margin: 0 0 26px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+fieldset {
+  margin: 0 0 28px;
+  padding: 0 0 4px;
+  border: 0;
+  min-width: 0;
+}
+
+fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-800);
+}
+
+legend::before {
+  content: "";
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--blue-600);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.opt {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.hint {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 11px 13px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background-color: var(--white);
+  border: 1.5px solid var(--blue-200);
+  border-radius: 10px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.field textarea {
+  min-height: 96px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.field select {
+  padding-right: 38px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231546b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  background-size: 14px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #9aaac7;
+}
+
+.field input:hover,
+.field textarea:hover,
+.field select:hover {
+  border-color: var(--blue-500);
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--blue-600);
+  box-shadow: 0 0 0 4px rgba(29, 91, 224, .16);
+}
+
+/* ---------- Unggah tanda tangan ---------- */
+
+.field input[type="file"] {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.field input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--blue-600);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+
+.field input[type="file"]::file-selector-button:hover {
+  background: var(--blue-700);
+}
+
+.sig-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 112px;
+  margin-bottom: 14px;
+  padding: 12px;
+  background-color: var(--white);
+  background-image:
+    linear-gradient(45deg, var(--blue-50) 25%, transparent 25%, transparent 75%, var(--blue-50) 75%),
+    linear-gradient(45deg, var(--blue-50) 25%, transparent 25%, transparent 75%, var(--blue-50) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  border: 1.5px dashed var(--blue-200);
+  border-radius: 10px;
+}
+
+.sig-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 100px;
+}
+
+.sig-preview img[hidden] {
+  display: none;
+}
+
+.sig-empty {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sig-controls {
+  transition: opacity .15s ease;
+}
+
+.sig-controls.is-disabled {
+  opacity: .55;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.check input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--blue-600);
+  cursor: pointer;
+}
+
+.range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.range label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.range input {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--blue-600);
+  cursor: pointer;
+}
+
+.range output {
+  min-width: 52px;
+  font-size: 13px;
+  text-align: right;
+  color: var(--muted);
+}
+
+.check input:focus-visible,
+.range input:focus-visible {
+  outline: 3px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+/* ---------- Toolbar & tombol ---------- */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.btn {
+  padding: 11px 18px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, transform .08s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.btn--sm {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.btn--primary {
+  color: var(--white);
+  background: var(--blue-600);
+  box-shadow: 0 8px 18px -8px rgba(29, 91, 224, .75);
+}
+
+.btn--primary:hover {
+  background: var(--blue-700);
+}
+
+.btn--ghost {
+  color: var(--blue-700);
+  background: var(--white);
+  border-color: var(--blue-200);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--blue-100);
+  border-color: var(--blue-500);
+}
+
+/* ---------- Kertas surat ---------- */
+
+.preview {
+  min-width: 0;
+}
+
+.paper {
+  max-width: 794px;
+  min-height: 1000px;
+  padding: 64px 72px;
+  font-family: var(--font-letter);
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: #101828;
+  background: var(--white);
+  border-top: 6px solid var(--blue-700);
+  border-radius: 6px;
+  box-shadow: var(--shadow-paper);
+}
+
+.paper p {
+  margin: 0 0 1em;
+  text-align: justify;
+}
+
+.paper .right {
+  text-align: right;
+}
+
+.paper strong {
+  font-weight: 600;
+}
+
+.kv {
+  margin: 0 0 1em;
+  border-collapse: collapse;
+}
+
+.kv td {
+  padding: 1px 0;
+  vertical-align: top;
+}
+
+.kv td:first-child {
+  padding-right: 8px;
+  white-space: nowrap;
+}
+
+.kv--data td:first-child {
+  min-width: 190px;
+}
+
+.paper ol {
+  margin: 0 0 1em;
+  padding-left: 1.5em;
+}
+
+.paper li {
+  margin-bottom: .15em;
+}
+
+.sign {
+  width: min(100%, 240px);
+  margin-top: 1.6em;
+  margin-left: auto;
+  break-inside: avoid;
+}
+
+.sign p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.sign__space {
+  display: flex;
+  align-items: flex-end;
+  min-height: 76px;
+  margin: 6px 0;
+}
+
+.sign__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* tanda untuk kolom yang belum diisi */
+.ph {
+  padding: 0 5px;
+  font-size: .92em;
+  color: var(--blue-700);
+  background: var(--blue-100);
+  border-radius: 4px;
+}
+
+/* ---------- Notifikasi ---------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 10;
+  max-width: calc(100vw - 32px);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--white);
+  background: var(--navy-900);
+  border-radius: 999px;
+  box-shadow: 0 12px 30px -10px rgba(10, 31, 68, .6);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.toast.is-show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- Responsif ---------- */
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .paper {
+    max-width: none;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    padding: 36px 18px 116px;
+  }
+
+  .layout {
+    padding: 0 14px;
+    margin-top: -80px;
+  }
+
+  .panel {
+    padding: 22px 18px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .paper {
+    padding: 36px 24px;
+    font-size: 15.5px;
+  }
+
+  .kv--data td:first-child {
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .toolbar .btn {
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  .toolbar .btn--primary {
+    flex-basis: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ---------- Cetak / simpan PDF ---------- */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 20mm 22mm;
+  }
+
+  body {
+    background: var(--white);
+  }
+
+  .topbar,
+  .panel,
+  .toolbar,
+  .toast {
+    display: none !important;
+  }
+
+  .layout {
+    display: block;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .paper {
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    font-size: 12pt;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .ph {
+    padding: 0;
+    color: inherit;
+    background: none;
+  }
+}
